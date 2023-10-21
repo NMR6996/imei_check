@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+    <title>Giris</title>
+</head>
+<body>
+    <div class="container">
+      <h2>Mobil telefonların qeydiyyatının yoxlanılması <small>Jafar Sadigzade</small></h2>
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class="col col-1">Marka</div>
+          <div class="col col-2">Model</div>
+          <div class="col col-3">imei</div>
+          <div class="col col-4">imei status</div>
+          <div class="col col-4">Qeyd</div>
+        </li>
+          {% for phone in phones %}
+        <li class="table-row">
+          <div class="col col-1" data-label="Job Id">{{ phone.brand }}</div>
+          <div class="col col-2" data-label="Customer Name">{{ phone.model }}</div>
+          <div class="col col-3" data-label="Amount">{{ phone.imei }}</div>
+          <div class="col col-4" data-label="Payment Status">{{ phone.check_status }}</div>
+          <div class="col col-4" data-label="Amount">{{ phone.note }}</div>
+        </li>
+          {% endfor %}
+      </ul>
+    </div>
+
+</body>
+</html>
