@@ -7,7 +7,7 @@ from django.dispatch import receiver
 class Phones(models.Model):
     brand = models.CharField(max_length=100, blank=True, null=True)
     model = models.CharField(max_length=100, blank=True, null=True)
-    imei = models.CharField(max_length=100)
+    imei = models.IntegerField()
     note = models.TextField(blank=True, null=True)
     added_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=100, default="Qedyiyyatdan keçirilməyib!")
