@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=chrome_options)
 
     def handle(self, *args, **kwargs):
         self.refresh_property()
