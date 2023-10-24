@@ -1,12 +1,11 @@
-from django.core.management.base import BaseCommand
 from core.models import Phones
-
+from django.core.management.base import BaseCommand
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class Command(BaseCommand):
@@ -14,7 +13,7 @@ class Command(BaseCommand):
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome()
 
     def handle(self, *args, **kwargs):
         self.refresh_property()
